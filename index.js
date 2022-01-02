@@ -1,1 +1,1 @@
-var ghost = require("ghost");
+var ghost = require("@patrick91/ghost");
