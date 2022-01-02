@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "casper": "github:TryGhost/Casper#main",
-    "@patrick91/ghost": "4.32.1",
+    "@patrick91/ghost": "4.32.2",
     "ghost-storage-cloudinary": "^2.1.5",
     "lyra": "github:TryGhost/lyra#main",
     "mysql2": "^2.2.5"
