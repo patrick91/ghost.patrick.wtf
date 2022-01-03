@@ -105,6 +105,6 @@ collections:
 ```;
 
 fs.writeFileSync(
-  path.join(appRoot, "content/settings/routes.yaml"),
+  path.join(appRoot, "/content/settings/routes.yaml"),
   routesContent
 );
