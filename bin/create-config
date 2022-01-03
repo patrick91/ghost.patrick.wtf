@@ -94,8 +94,8 @@ routes:
   /: home
 
 collections:
-  /blog/:
-    permalink: /blog/{slug}/
+  /posts/:
+    permalink: /posts/{slug}/
     template: index
 
   /til/:
