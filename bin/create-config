@@ -89,7 +89,7 @@ function createConfig() {
 var configContents = JSON.stringify(createConfig(), null, 2);
 fs.writeFileSync(path.join(appRoot, "config.production.json"), configContents);
 
-var routesContent = ```
+var routesContent = `
 routes:
   /: home
 
@@ -102,7 +102,7 @@ collections:
     permalink: /til/{slug}/
     template: index
     filter: primary_tag:til
-```;
+`;
 
 console.log(path.join(appRoot, "/content/settings/routes.yaml"));
 
