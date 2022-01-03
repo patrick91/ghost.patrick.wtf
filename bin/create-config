@@ -88,3 +88,23 @@ function createConfig() {
 
 var configContents = JSON.stringify(createConfig(), null, 2);
 fs.writeFileSync(path.join(appRoot, "config.production.json"), configContents);
+
+var routesContent = ```
+routes:
+  /: home
+
+collections:
+  /blog/:
+    permalink: /blog/{slug}/
+    template: index
+
+  /til/:
+    permalink: /til/{slug}/
+    template: index
+    filter: primary_tag:til
+```;
+
+fs.writeFileSync(
+  path.join(appRoot, "content/settings/routes.yaml"),
+  routesContent
+);
