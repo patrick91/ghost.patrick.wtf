@@ -52,7 +52,7 @@ function createConfig() {
         service: "Mailgun",
         host: "smtp.eu.mailgun.org",
         port: 587,
-        secure: true,
+        secure: false,
         secureConnection: true,
         auth: {
           user: process.env.MAILGUN_SMTP_LOGIN,
