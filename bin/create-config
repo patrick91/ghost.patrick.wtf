@@ -104,6 +104,8 @@ collections:
     filter: primary_tag:til
 ```;
 
+console.log(path.join(appRoot, "/content/settings/routes.yaml"));
+
 fs.writeFileSync(
   path.join(appRoot, "/content/settings/routes.yaml"),
   routesContent
