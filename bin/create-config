@@ -9,7 +9,7 @@ var fs = require("fs");
 var path = require("path");
 
 var appRoot = path.join(__dirname, "..");
-
+var contentPath = path.join(appRoot, "/content/");
 function createConfig() {
   var fileStorage, storage;
 
@@ -41,7 +41,7 @@ function createConfig() {
   }
 
   config = {
-    url: "https://patrick.wtf",
+    url: process.env.BLOG_URL,
     logging: {
       level: "info",
       transports: ["stdout"],
@@ -50,10 +50,6 @@ function createConfig() {
       transport: "SMTP",
       options: {
         service: "Mailgun",
-        host: "smtp.eu.mailgun.org",
-        port: 587,
-        secure: false,
-        secureConnection: false,
         auth: {
           user: process.env.MAILGUN_SMTP_LOGIN,
           pass: process.env.MAILGUN_SMTP_PASSWORD,
@@ -79,7 +75,7 @@ function createConfig() {
       port: process.env.PORT,
     },
     paths: {
-      contentPath: path.join(appRoot, "/content/"),
+      contentPath: contentPath,
     },
   };
 
@@ -109,3 +105,4 @@ fs.writeFileSync(
   path.join(appRoot, "/content/settings/routes.yaml"),
   routesContent
 );
+fs.mkdirSync(path.join(contentPath, "/data/"), { recursive: true });
